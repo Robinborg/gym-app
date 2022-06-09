@@ -1,40 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 
 const PauseButton = () => {
-	const [time, setTime] = useState(0);
-	const [running, setRunning] = useState(false);
+	const [timer, setTimer] = useState(0);
+	const [isActive, setIsActive] = useState(false);
+	const [isPaused, setIsPaused] = useState(false);
+	const countRef = useRef(null);
 
-	useEffect(() => {
-		let interval;
+	const handleStart = () => {
+		setIsActive(true);
+		setIsPaused(true);
+		countRef.current = setInterval(() => {
+			setTimer((timer) => timer + 1);
+		}, 1000);
+	};
+	const handlePause = () => {
+		clearInterval(countRef.current);
+		setIsPaused(false);
+	};
+	const handleReset = () => {
+		clearInterval(countRef.current);
+		setIsActive(false);
+		setIsPaused(false);
+		setTimer(0);
+	};
+	const formatTimer = () => {
+		const getSeconds = `0${(timer % 60)}`.slice(-2);
+	  const minutes = `${Math.floor(timer / 60)}`;
+  	const getMinutes = `0${minutes % 60}`.slice(-2);
 
-		if (running) {
-			interval = setInterval(() => {
-				setTime(prevTime => prevTime + 10);
-			}, 10);
-
-		} else if (!running) {
-			clearInterval(interval);
-		} else {
-			clearInterval(interval);
-			setTime(0);
-		}
-
-		return () => clearInterval(interval);
-	}, [running]);
+		return `${getMinutes} : ${getSeconds}`;
+	};
 
 	return (
 		<div>
-		  <div>
-		  	<span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
-		  	<span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
-		  	<span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
-		  </div>
-		  <div>
-		  	<button onClick={() => setRunning(true)}>Start</button>
-		  	<button onClick={() => setRunning(false)}>Stop</button>
-		  	<button onClick={() => setTime(0)}>Reset</button>
-		  </div>
+			<h1>Timer</h1>
+			<div>
+				<p>{formatTimer()}</p>
+				<div>
+					<button onClick={handleStart}>Start</button>
+					<button onClick={handlePause}>Pause</button>
+					<button onClick={handleReset}>Reset</button>
+				</div>
+			</div>
 		</div>
 	);
 };

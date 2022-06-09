@@ -2,7 +2,6 @@ import React from 'react';
 
 import MainTimer from './MainTimer';
 import Sets from './Sets';
-import CurrentSet from './CurrentSet';
 
 
 const App = () => {
@@ -10,7 +9,6 @@ const App = () => {
 		<div>
 			<MainTimer />
 			<Sets />
-			<CurrentSet />
 		</div>
 	);
 };
