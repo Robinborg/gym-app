@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import CurrentSet from './CurrentSet';
 
-const Sets = () => {
+const Sets = props => {
+	const [currentSet, setCurrentSet] = useState(1);
+
 	return (
 		<div>
 			<ul>
@@ -20,6 +23,7 @@ const Sets = () => {
 					Set 5
 				</li>
 			</ul>
+			<CurrentSet updateSet={ setCurrentSet } currentSet={ currentSet } />
 		</div>
 	);
 };

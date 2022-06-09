@@ -3,7 +3,6 @@ import React from 'react';
 import MainTimer from './MainTimer';
 import Sets from './Sets';
 import CurrentSet from './CurrentSet';
-import PauseButton from './PauseButton';
 
 
 const App = () => {
@@ -12,7 +11,6 @@ const App = () => {
 			<MainTimer />
 			<Sets />
 			<CurrentSet />
-			<PauseButton />
 		</div>
 	);
 };
