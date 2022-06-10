@@ -1,50 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+import Timer from './Timer';
 
-const PauseButton = () => {
-	const [timer, setTimer] = useState(0);
-	const [isActive, setIsActive] = useState(false);
-	const [isPaused, setIsPaused] = useState(false);
-	const countRef = useRef(null);
-
-	const handleStart = () => {
-		setIsActive(true);
-		setIsPaused(true);
-		countRef.current = setInterval(() => {
-			setTimer((timer) => timer + 1);
-		}, 1000);
-	};
-	const handlePause = () => {
-		clearInterval(countRef.current);
-		setIsPaused(false);
-	};
-	const handleReset = () => {
-		clearInterval(countRef.current);
-		setIsActive(false);
-		setIsPaused(false);
-		setTimer(0);
-	};
-	const formatTimer = () => {
-		const getSeconds = `0${(timer % 60)}`.slice(-2);
-	  const minutes = `${Math.floor(timer / 60)}`;
-  	const getMinutes = `0${minutes % 60}`.slice(-2);
-
-		return `${getMinutes} : ${getSeconds}`;
-	};
+const PauseButton = ({ onClickIncrement }) => {
 
 	return (
 		<div>
-			<h1>Timer</h1>
-			<div>
-				<p>{formatTimer()}</p>
-				<div>
-					<button onClick={handleStart}>Start</button>
-					<button onClick={handlePause}>Pause</button>
-					<button onClick={handleReset}>Reset</button>
-				</div>
-			</div>
+			<Timer onClickIncrement={onClickIncrement}/>
 		</div>
-	);
+	)
 };
 
 export default PauseButton;

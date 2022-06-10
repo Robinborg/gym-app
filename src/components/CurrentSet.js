@@ -12,10 +12,10 @@ const CurrentSet = () => {
 	return (
 		<div>
 			<div>
-				<h3>{currentSetCount}</h3>
+				<h3>{currentSetCount} / 5</h3>
 			</div>
-			<div onClick={onClickIncrement}>
-				<PauseButton />
+			<div>
+				<PauseButton onClickIncrement={onClickIncrement}/>
 			</div>
 		</div>
 	);
