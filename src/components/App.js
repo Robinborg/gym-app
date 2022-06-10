@@ -8,7 +8,13 @@ const App = () => {
 	return (
 		<div>
 			<MainTimer />
-			<Sets />
+			<Sets 
+				setOne={"Shoulder press"} 
+			  setTwo={"Shoulder Flys"}
+			  setThree={"Biceps with Rope"}
+				setFour={"Biceps single hand"}
+				setFive={"Ab crunches"}
+						/>
 		</div>
 	);
 };

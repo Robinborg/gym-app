@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 
 import Timer from './Timer';
 
@@ -8,7 +8,7 @@ const PauseButton = ({ onClickIncrement }) => {
 		<div>
 			<Timer onClickIncrement={onClickIncrement}/>
 		</div>
-	)
+	);
 };
 
 export default PauseButton;
