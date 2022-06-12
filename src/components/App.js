@@ -2,26 +2,27 @@ import React, { useState } from 'react';
 
 import MainTimer from './MainTimer';
 import Sets from './Sets';
+import './style.css';
 
 
 const App = () => {
 	const [isActive, setIsActive] = useState(false);
 	return (
-		<div>
-			<div>
-				<button onClick={() => setIsActive(!isActive)}>
+		<div className="justify-middle">
+			<MainTimer isActive={isActive}/>
+			<div className="justify-middle">
+				<button  
+					className="start-button"
+					onClick={() => setIsActive(!isActive)}>
 			    	Start exercise
 			  	</button>
 			</div>
-			<MainTimer 
-				isActive={isActive}
-			/>
 			<Sets 
-				setOne={"Shoulder press"} 
-			  setTwo={"Shoulder Flys"}
-			  setThree={"Biceps with Rope"}
-				setFour={"Biceps single hand"}
-				setFive={"Ab crunches"}
+				setOne={"Exercise"} 
+			  setTwo={"Exercise"}
+			  setThree={"Exercise"}
+				setFour={"Exercise"}
+				setFive={"Exercise"}
 						/>
 		</div>
 	);

@@ -34,19 +34,22 @@ const Timer = ({ onClickIncrement }) => {
 				setIsPaused(false);
 				setTimer(0);
 			}
-			return `${getMinutes} : ${getSeconds}`;
+			return `${getMinutes}:${getSeconds}`;
 		};
 	   return (
-				<div>
-					<h1>Timer</h1>
 				  <div>
-				  	<p>{formatTimer()}</p>
-						<div>
-							<button onClick={() => {onClickIncrement(); handleStart()}}>Start</button>
-						  <button onClick={handlePause}>Pause</button>
-						  <button onClick={handleReset}>Reset</button>
+						<p>rest time: 02:00 / {formatTimer()}</p>
+						<div className="box-buttons">
+							<button 
+								className="timer-buttons start-button"
+							  onClick={() => {onClickIncrement(); handleStart()}}>Start</button>
+						  <button 
+								className="timer-buttons pause-button"
+							  onClick={handlePause}>Pause</button>
+						  <button 
+								className="timer-buttons reset-button"
+							  onClick={handleReset}>Reset</button>
 				   </div>
-				  </div>
 				</div>
 			);
 		};

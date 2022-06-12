@@ -5,7 +5,6 @@ const MainTimer = ({isActive}) => {
 	const [countDown, setCountDown] = useState(3600);
 	const intervalRef = useRef(null);
 
-	console.log(isActive);
 	useEffect(() => {
 		if (isActive) {
 		intervalRef.current = setInterval(() => {
@@ -30,7 +29,7 @@ const MainTimer = ({isActive}) => {
 	};
 
 	return (
-		<div>
+		<div className="big-clock">
 			<p>{(intervalRef.current) ? formatCountdown() : `60 : 00`}</p>
 		</div>
 		);	
