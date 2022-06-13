@@ -5,7 +5,7 @@ const CurrentSet = ({ currentSetCount, setCurrentSetCount}) => {
 	const onClickIncrement = () => {
 		setCurrentSetCount(currentSetCount + 1);
 		if (currentSetCount === 5) {
-			setCurrentSetCount(0);
+			setCurrentSetCount(1);
 		}
 	};
 	return (

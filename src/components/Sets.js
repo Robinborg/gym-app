@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import CurrentSet from './CurrentSet';
 
 const Sets = props => {
-	const [currentSetCount, setCurrentSetCount] = useState(0);
+	const [currentSetCount, setCurrentSetCount] = useState(1);
 	const first = useRef(true);
 	const second = useRef(false);
 	const third = useRef(false);
@@ -32,11 +32,11 @@ const Sets = props => {
 	return (
 		<div>
 			<ol className="exercise-list">
-				<li>{ props.setOne } { (first.current) ?  currentSetCount : (second.current || third.current || fourth.current || fifth.current) ? 5 : 0  } / 5</li>
-				<li>{ props.setTwo } { (second.current) ? currentSetCount : (third.current || fourth.current || fifth.current) ? 5 : 0 } / 5</li>
-				<li>{ props.setThree } { (third.current) ? currentSetCount : (fourth.current || fifth.current) ? 5 : 0 } / 5</li>
-				<li>{ props.setFour } { (fourth.current) ? currentSetCount : (fifth.current) ? 5 : 0 } / 5</li>
-				<li>{ props.setFive } { (fifth.current) ? currentSetCount : 0 } / 5</li>
+				<li>{ props.setOne } { (first.current) ?  currentSetCount : (second.current || third.current || fourth.current || fifth.current) ? 5 : 1  } / 5</li>
+				<li>{ props.setTwo } { (second.current) ? currentSetCount : (third.current || fourth.current || fifth.current) ? 5 : 1 } / 5</li>
+				<li>{ props.setThree } { (third.current) ? currentSetCount : (fourth.current || fifth.current) ? 5 : 1 } / 5</li>
+				<li>{ props.setFour } { (fourth.current) ? currentSetCount : (fifth.current) ? 5 : 1 } / 5</li>
+				<li>{ props.setFive } { (fifth.current) ? currentSetCount : 1 } / 5</li>
 			</ol>
 			<div>
 				<CurrentSet 
