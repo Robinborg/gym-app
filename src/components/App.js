@@ -14,7 +14,7 @@ const App = () => {
 				<button  
 					className="start-button"
 					onClick={() => setIsActive(!isActive)}>
-			    	Start exercise
+			    	Start Session 
 			  	</button>
 			</div>
 			<Sets 
