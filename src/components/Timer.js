@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState,  useRef } from 'react';
 
 
 const Timer = ({ onClickIncrement }) => {
@@ -42,7 +42,15 @@ const Timer = ({ onClickIncrement }) => {
 						<div className="box-buttons">
 							<button 
 								className="timer-buttons start-button"
-							  onClick={() => {onClickIncrement(); handleStart()}}>Start Break</button>
+							  onClick={() => {
+							    if (!isActive) {
+										onClickIncrement(); 
+										handleStart();
+									} else {
+										console.log("running");
+									}
+								}
+							}>Start Break</button>
 						  <button 
 								className="timer-buttons pause-button"
 							  onClick={handlePause}>Pause Break</button>

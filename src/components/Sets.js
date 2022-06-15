@@ -24,7 +24,7 @@ const Sets = props => {
 				fifth.current = true;
 				fourth.current = false;
 			} else {
-				alert("done working out");
+				alert("You are done working out");
 		};
 		}
 	}, [currentSetCount]);
