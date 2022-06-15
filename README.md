@@ -1,5 +1,6 @@
 # Gym App
-Web app to keep track of your gym training.
+Web app to keep track of your gym training.<br/>
+Try it yourself https://robinborg.github.io/gym-app/
 
 ## Reason
 Wanted to make an app that uses the information provided in this podcast:
@@ -12,6 +13,7 @@ Wanted to make an app that uses the information provided in this podcast:
 - 3 to 5 minutes rest<br/>
 If you are working for strength use 85 % of maximum<br/>
 If you are working for power use 40% to 70 % of maximum, because power = speed * strength
+
 
 ## Gym app layout
 - Main timer keeping track of time, default 60 minutes
