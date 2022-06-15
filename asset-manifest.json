@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.f0508fb7.css",
-    "main.js": "/static/js/main.bbe278cd.js",
-    "index.html": "/index.html",
-    "main.f0508fb7.css.map": "/static/css/main.f0508fb7.css.map",
-    "main.bbe278cd.js.map": "/static/js/main.bbe278cd.js.map"
+    "main.css": "/gym-app/static/css/main.f0508fb7.css",
+    "main.js": "/gym-app/static/js/main.e980e936.js",
+    "index.html": "/gym-app/index.html",
+    "main.f0508fb7.css.map": "/gym-app/static/css/main.f0508fb7.css.map",
+    "main.e980e936.js.map": "/gym-app/static/js/main.e980e936.js.map"
   },
   "entrypoints": [
     "static/css/main.f0508fb7.css",
-    "static/js/main.bbe278cd.js"
+    "static/js/main.e980e936.js"
   ]
 }
