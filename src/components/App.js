@@ -3,59 +3,40 @@ import { useForm } from 'react-hook-form';
 
 import MainTimer from './MainTimer';
 import Sets from './Sets';
+import ExerciseEntryForm from './ExerciseEntryForm';
 import './style.css';
 
 
 const App = () => {
 	const [isActive, setIsActive] = useState(false);
-	const { register, handleSubmit, watch, formState: { errors} } = useForm();
+	const [showForm, setShowForm] = useState(true);
+
+
 	const firstExerciseRef = useRef("First Exercise");
 	const secondExerciseRef = useRef("Second Exercise");
 	const thirdExerciseRef = useRef("Third Exercise");
 	const fourthExerciseRef = useRef("Fourth Exercise");
 	const fifthExerciseRef = useRef("Fifth Exercise");
 
-	const onSubmit = data => {
-		if (data.firstExercise) {
-			firstExerciseRef.current = data.firstExercise;
-		} 
-		if (data.secondExercise) {
-			secondExerciseRef.current = data.secondExercise;
-		}
-		if (data.thirdExercise) {
-			thirdExerciseRef.current = data.thirdExercise;
-		}
-		if (data.fourthExercise) {
-			fourthExerciseRef.current = data.fourthExercise;
-		}
-		if (data.fifthExercise) {
-			fifthExerciseRef.current = data.fifthExercise;
-		}
-	};
-
-
 	return (
 		<div className="justify-middle">
-			<div>
-				<h1>Enter exercises</h1>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<input {...register("firstExercise")}/>
-				<input {...register("secondExercise")}/>
-				<input {...register("thirdExercise")}/>
-				<input {...register("fourthExercise")}/>
-				<input {...register("fifthExercise")}/>
-				<input type="submit"/>
-				</form>
-			</div>
+			{ showForm ? <ExerciseEntryForm 
+				firstExerciseRef={ firstExerciseRef }
+				secondExerciseRef={ secondExerciseRef }
+				thirdExerciseRef={ thirdExerciseRef }
+				fourthExerciseRef={ fourthExerciseRef }
+				fifthExerciseRef={ fifthExerciseRef }
+			/> : null }
 			<MainTimer isActive={isActive}/>
 			<div className="justify-middle">
 				<button  
 					className="start-button"
 					onClick={() => {
 						if (!isActive) {
-						  setIsActive(!isActive)
+						  setIsActive(!isActive);
+							setShowForm(!showForm);
 						} else {
-							console.log("running");
+							console.log("Timer is running already");
 						}
 					}}>
 			    	Start Session 
@@ -67,7 +48,7 @@ const App = () => {
 			  setThree={thirdExerciseRef.current}
 				setFour={fourthExerciseRef.current}
 				setFive={fifthExerciseRef.current}
-						/>
+			/>
 		</div>
 	);
 };

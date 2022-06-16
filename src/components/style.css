@@ -59,3 +59,17 @@ body {
 	border-radius: 30px;
 	padding: 10px;
 }
+input{
+	padding: 20px 40px;
+	margin: 10px;
+	border-radius: 25px;
+}
+.input-button {
+	background-color: #FCF8E8;
+	font-size: 32px;
+	padding: 10px 20px;
+	border-radius: 12px;
+	text-decoration: none;
+	cursor: pointer;
+	border: 5px solid green;
+}
