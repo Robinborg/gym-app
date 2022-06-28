@@ -1,13 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const ExerciseEntryForm = ({firstExerciseRef,
+const ExerciseEntryForm = ({ 
+	firstExerciseRef,
 	secondExerciseRef,
 	thirdExerciseRef,
 	fourthExerciseRef,
 	fifthExerciseRef
 }) => {
-	const { register, handleSubmit, formState: { errors } } = useForm();
+	  const { register, handleSubmit, formState: { errors } } = useForm();
 		const onSubmit = data => {
 			if (data.firstExercise) {
 				firstExerciseRef.current = data.firstExercise;
@@ -29,14 +30,14 @@ const ExerciseEntryForm = ({firstExerciseRef,
 			<div className="justify-middle">
 				<div>
 					<h1>Enter Names of Exercises</h1>
-					<form onSubmit={handleSubmit(onSubmit)}>
-			      <input {...register("firstExercise")}/>
-						<input {...register("secondExercise")}/>
-						<input {...register("thirdExercise")}/>
-						<input {...register("fourthExercise")}/>
-						<input {...register("fifthExercise")}/>
+					<form onSubmit={ handleSubmit(onSubmit) }>
+			      <input { ...register("firstExercise") }/>
+						<input { ...register("secondExercise") }/>
+						<input { ...register("thirdExercise") }/>
+						<input { ...register("fourthExercise") }/>
+						<input { ...register("fifthExercise") }/>
 						<input className="input-button" type="submit"/>
-						</form>
+					</form>
 				</div>
 			</div>
 		);

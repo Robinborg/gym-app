@@ -31,13 +31,15 @@ const Sets = props => {
 
 	return (
 		<div>
-			<ol className="exercise-list">
+			<div className="exercise-list">
+			<ol>
 				<li>{ props.setOne } { (first.current) ?  currentSetCount : (second.current || third.current || fourth.current || fifth.current) ? 5 : 0  } / 5</li>
 				<li>{ props.setTwo } { (second.current) ? currentSetCount : (third.current || fourth.current || fifth.current) ? 5 : 0 } / 5</li>
 				<li>{ props.setThree } { (third.current) ? currentSetCount : (fourth.current || fifth.current) ? 5 : 0 } / 5</li>
 				<li>{ props.setFour } { (fourth.current) ? currentSetCount : (fifth.current) ? 5 : 0 } / 5</li>
 				<li>{ props.setFive } { (fifth.current) ? currentSetCount : 0 } / 5</li>
 			</ol>
+			</div>
 			<div>
 				<CurrentSet 
 					currentSetCount={currentSetCount}

@@ -6,20 +6,20 @@ import Sets from './Sets';
 import ExerciseEntryForm from './ExerciseEntryForm';
 import './style.css';
 
-
 const App = () => {
+	// Timer On or Off
 	const [isActive, setIsActive] = useState(false);
+	// Show Form or Hide Form
 	const [showForm, setShowForm] = useState(true);
-
-
-	const firstExerciseRef = useRef("First Exercise");
-	const secondExerciseRef = useRef("Second Exercise");
-	const thirdExerciseRef = useRef("Third Exercise");
-	const fourthExerciseRef = useRef("Fourth Exercise");
-	const fifthExerciseRef = useRef("Fifth Exercise");
+	// Reference Exercises
+	const firstExerciseRef = useRef("Enter Exercise");
+	const secondExerciseRef = useRef("Enter Exercise");
+	const thirdExerciseRef = useRef("Enter Exercise")
+	const fourthExerciseRef = useRef("Enter Exercise");
+	const fifthExerciseRef = useRef("Enter Exercise");
 
 	return (
-		<div className="justify-middle">
+		<div className="flexbox-container">
 			{ showForm ? <ExerciseEntryForm 
 				firstExerciseRef={ firstExerciseRef }
 				secondExerciseRef={ secondExerciseRef }
@@ -27,7 +27,7 @@ const App = () => {
 				fourthExerciseRef={ fourthExerciseRef }
 				fifthExerciseRef={ fifthExerciseRef }
 			/> : null }
-			<MainTimer isActive={isActive}/>
+			<MainTimer isActive={ isActive }/>
 			<div className="justify-middle">
 				<button  
 					className="start-button"
