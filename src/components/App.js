@@ -9,24 +9,33 @@ import './style.css';
 const App = () => {
 	// Timer On or Off
 	const [isActive, setIsActive] = useState(false);
+	// react-hook-form
+	const { register, handleSubmit } = useForm();
+	const [data, setData] = useState(["first exercise",
+	                                  "second exercise",
+	  																"third exercise",
+																		"fourth exercise",
+																		"fifth exercise"]);
 	// Show Form or Hide Form
 	const [showForm, setShowForm] = useState(true);
-	// Reference Exercises
-	const firstExerciseRef = useRef("Enter Exercise");
-	const secondExerciseRef = useRef("Enter Exercise");
-	const thirdExerciseRef = useRef("Enter Exercise")
-	const fourthExerciseRef = useRef("Enter Exercise");
-	const fifthExerciseRef = useRef("Enter Exercise");
 
 	return (
 		<div className="flexbox-container">
-			{ showForm ? <ExerciseEntryForm 
-				firstExerciseRef={ firstExerciseRef }
-				secondExerciseRef={ secondExerciseRef }
-				thirdExerciseRef={ thirdExerciseRef }
-				fourthExerciseRef={ fourthExerciseRef }
-				fifthExerciseRef={ fifthExerciseRef }
-			/> : null }
+			<div>
+				<h1>Enter names of Exercises</h1>
+				<form onSubmit={handleSubmit(data => 
+					setData(JSON.stringify(data)))}>
+					<input {...register("first exercise") }/>
+					<input {...register("second exercise") }/>
+					<input {...register("third exercise") }/>
+					<input {...register("fourth exercise") }/>
+					<input {...register("fifth exercise") }/>
+					<input className="input-button" type="submit"/>
+				</form>
+			</div>
+			<div>
+				{console.log(data)}
+			</div>
 			<MainTimer isActive={ isActive }/>
 			<div className="justify-middle">
 				<button  
@@ -43,11 +52,7 @@ const App = () => {
 			  	</button>
 			</div>
 			<Sets 
-				setOne={firstExerciseRef.current} 
-			  setTwo={secondExerciseRef.current}
-			  setThree={thirdExerciseRef.current}
-				setFour={fourthExerciseRef.current}
-				setFive={fifthExerciseRef.current}
+			  sets={data} 
 			/>
 		</div>
 	);
