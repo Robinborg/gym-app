@@ -28,7 +28,7 @@ const App = () => {
 				fifthExerciseRef={ fifthExerciseRef }
 			/> : null }
 			<MainTimer isActive={isActive}/>
-			<div className="justify-middle">
+			<div>
 				<button  
 					className="start-button"
 					onClick={() => {

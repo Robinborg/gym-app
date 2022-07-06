@@ -26,7 +26,7 @@ const ExerciseEntryForm = ({firstExerciseRef,
 	   	}
 		};
 		return (
-			<div className="justify-middle">
+			<div>
 				<div>
 					<h1>Enter Names of Exercises</h1>
 					<form onSubmit={handleSubmit(onSubmit)}>

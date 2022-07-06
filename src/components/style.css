@@ -5,6 +5,9 @@ body {
 	background-color: #333333;
 	font-size: 30px;
 	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .big-clock {
@@ -52,17 +55,20 @@ body {
 .exercise-list {
 	line-height: 140%;
 	list-style-position: inside;
-	margin-right: 15em;
-	margin-left: 15em;
 	border: 2px solid white;
-	box-shadow: 1px 1px 1px 1px grey;
-	border-radius: 30px;
-	padding: 10px;
+	border-radius: 10px;
+	margin-left: 300px;
+	margin-right: 300px;
 }
 input{
 	padding: 20px 40px;
 	margin: 10px;
-	border-radius: 25px;
+	border-radius: 10px;
+}
+form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 .input-button {
 	background-color: #FCF8E8;
