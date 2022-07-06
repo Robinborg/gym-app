@@ -2,7 +2,6 @@ import React from 'react';
 import PauseButton from './PauseButton';
 
 const CurrentSet = ({ currentSetCount, setCurrentSetCount}) => { 
-
 	const onClickIncrement = () => {
 		setCurrentSetCount(currentSetCount + 1);
 		if (currentSetCount === 4) {

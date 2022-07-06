@@ -6,37 +6,28 @@ import Sets from './Sets';
 import ExerciseEntryForm from './ExerciseEntryForm';
 import './style.css';
 
+
 const App = () => {
-	// Timer On or Off
 	const [isActive, setIsActive] = useState(false);
-	// react-hook-form
-	const { register, handleSubmit } = useForm();
-	const [data, setData] = useState(["first exercise",
-	                                  "second exercise",
-	  																"third exercise",
-																		"fourth exercise",
-																		"fifth exercise"]);
-	// Show Form or Hide Form
 	const [showForm, setShowForm] = useState(true);
 
+
+	const firstExerciseRef = useRef("First Exercise");
+	const secondExerciseRef = useRef("Second Exercise");
+	const thirdExerciseRef = useRef("Third Exercise");
+	const fourthExerciseRef = useRef("Fourth Exercise");
+	const fifthExerciseRef = useRef("Fifth Exercise");
+
 	return (
-		<div className="flexbox-container">
-			<div>
-				<h1>Enter names of Exercises</h1>
-				<form onSubmit={handleSubmit(data => 
-					setData(JSON.stringify(data)))}>
-					<input {...register("first exercise") }/>
-					<input {...register("second exercise") }/>
-					<input {...register("third exercise") }/>
-					<input {...register("fourth exercise") }/>
-					<input {...register("fifth exercise") }/>
-					<input className="input-button" type="submit"/>
-				</form>
-			</div>
-			<div>
-				{console.log(data)}
-			</div>
-			<MainTimer isActive={ isActive }/>
+		<div className="justify-middle">
+			{ showForm ? <ExerciseEntryForm 
+				firstExerciseRef={ firstExerciseRef }
+				secondExerciseRef={ secondExerciseRef }
+				thirdExerciseRef={ thirdExerciseRef }
+				fourthExerciseRef={ fourthExerciseRef }
+				fifthExerciseRef={ fifthExerciseRef }
+			/> : null }
+			<MainTimer isActive={isActive}/>
 			<div className="justify-middle">
 				<button  
 					className="start-button"
@@ -52,7 +43,11 @@ const App = () => {
 			  	</button>
 			</div>
 			<Sets 
-			  sets={data} 
+				setOne={firstExerciseRef.current} 
+			  setTwo={secondExerciseRef.current}
+			  setThree={thirdExerciseRef.current}
+				setFour={fourthExerciseRef.current}
+				setFive={fifthExerciseRef.current}
 			/>
 		</div>
 	);
