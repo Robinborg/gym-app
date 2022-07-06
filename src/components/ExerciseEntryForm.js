@@ -28,7 +28,7 @@ const ExerciseEntryForm = ({firstExerciseRef,
 		return (
 			<div>
 				<div>
-					<h1>Enter Names of Exercises</h1>
+					<h1>Enter Exercises:</h1>
 					<form onSubmit={handleSubmit(onSubmit)}>
 			      <input {...register("firstExercise")}/>
 						<input {...register("secondExercise")}/>
