@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 
 import MainTimer from './MainTimer';
@@ -11,15 +11,11 @@ const App = () => {
 	const [isActive, setIsActive] = useState(false);
 	const [showForm, setShowForm] = useState(true);
 
-
 	const firstExerciseRef = useRef("First Exercise");
 	const secondExerciseRef = useRef("Second Exercise");
 	const thirdExerciseRef = useRef("Third Exercise");
 	const fourthExerciseRef = useRef("Fourth Exercise");
 	const fifthExerciseRef = useRef("Fifth Exercise");
-
-	useEffect(() => {
-	}, [firstExerciseRef])
 
 	return (
 		<div className="justify-middle">
