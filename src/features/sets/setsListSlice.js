@@ -2,27 +2,21 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const SETS_LIST = 'setsList';
 
+const initialState = []
+
 export const setsListSlice = createSlice({
 	name: SETS_LIST,
-	initialState: {
-		sets: [
-			"Bench Press",
-			"Cable Fly",
-			"Barbell Bench Press",
-			"Dip",
-			"Decline Press",
-		],
-	},
+	initialState,
 	reducers: {
 		addToList: (state, action) => {
-			state.sets.push(action.payload)
+			state.push(action.payload)
 		},
 		clearList: state => {
-			state.sets = []
+			return initialState
 		},
 	},
 });
 
-export const { addToList, clearList } = setsListSlice.actions;
+export const { addToList, clearList, incrementCounter } = setsListSlice.actions;
 export default setsListSlice.reducer;
 

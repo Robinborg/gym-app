@@ -4,18 +4,16 @@ import CurrentSet from './CurrentSet';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToList } from './setsListSlice';
 
-const Sets = props => {
-	const [currentSetCount, setCurrentSetCount] = useState(0);
+const Sets = () => {
 	
-	// figuring out redux-react
 	const setList = useSelector(state => state.setsList);
 	const dispatch = useDispatch();
 
 	return (
 		<div>
-			{setList.sets.map(set =>  (
+			{setList.map(set =>  (
 			  <p key={set}>
-			    {set}
+			    {set} 0 / 5
 			  </p>
 			))}
 			<CurrentSet />

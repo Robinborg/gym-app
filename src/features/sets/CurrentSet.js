@@ -1,20 +1,14 @@
 import React from 'react';
 import PauseButton from '../../app/PauseButton';
 
-const CurrentSet = ({ currentSetCount, setCurrentSetCount}) => { 
-	const onClickIncrement = () => {
-		setCurrentSetCount(currentSetCount + 1);
-		if (currentSetCount === 4) {
-			setCurrentSetCount(0);
-		}
-	};
+const CurrentSet = () => { 
 	return (
 		<div>
 			<div>
-				<h3>{ currentSetCount } / 5</h3>
+				<h3> / 5</h3>
 			</div>
 			<div>
-				<PauseButton onClickIncrement={onClickIncrement}/>
+				<PauseButton />
 			</div>
 		</div>
 	);
