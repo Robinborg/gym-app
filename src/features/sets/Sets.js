@@ -13,10 +13,12 @@ const Sets = props => {
 
 	return (
 		<div>
-			{setList.sets.map(set => <p>{set}</p>)}
-			<button onClick={() => dispatch(addToList('one more exercise'))}>
-				add exercise
-			</button>
+			{setList.sets.map(set =>  (
+			  <p key={set}>
+			    {set}
+			  </p>
+			))}
+			<CurrentSet />
 		</div>
 	);
 };

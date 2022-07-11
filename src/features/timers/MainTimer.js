@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const MainTimer = ({isActive}) => {
+const MainTimer = ({ isActive }) => {
 
 	const [countDown, setCountDown] = useState(3600);
 	const intervalRef = useRef(null);

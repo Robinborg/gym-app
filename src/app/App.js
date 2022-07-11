@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 
 import MainTimer from '../features/timers/MainTimer';
 import Sets from '../features/sets/Sets';
+import ExerciseEntryForm from './ExerciseEntryForm';
 import './style.css';
 
 
@@ -11,6 +12,7 @@ const App = () => {
 
 	return (
 		<div className="justify-middle">
+			<ExerciseEntryForm />
 			<MainTimer isActive={isActive}/>
 			<div>
 				<button  

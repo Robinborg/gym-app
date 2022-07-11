@@ -6,17 +6,23 @@ export const setsListSlice = createSlice({
 	name: SETS_LIST,
 	initialState: {
 		sets: [
-			"arms",
-			"legs"
+			"Bench Press",
+			"Cable Fly",
+			"Barbell Bench Press",
+			"Dip",
+			"Decline Press",
 		],
 	},
 	reducers: {
 		addToList: (state, action) => {
 			state.sets.push(action.payload)
 		},
+		clearList: state => {
+			state.sets = []
+		},
 	},
 });
 
-export const { addToList } = setsListSlice.actions;
+export const { addToList, clearList } = setsListSlice.actions;
 export default setsListSlice.reducer;
 
