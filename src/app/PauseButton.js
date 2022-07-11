@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Timer from './Timer';
+import Timer from '../features/timers/Timer';
 
 const PauseButton = ({ onClickIncrement }) => {
 

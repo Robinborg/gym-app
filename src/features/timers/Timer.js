@@ -1,6 +1,5 @@
 import React, { useState,  useRef } from 'react';
 
-
 const Timer = ({ onClickIncrement }) => {
 		const [timer, setTimer] = useState(0);
 		const [isActive, setIsActive] = useState(false);

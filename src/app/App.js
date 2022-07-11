@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 
-import MainTimer from './MainTimer';
+import MainTimer from '../features/timers/MainTimer';
 import Sets from '../features/sets/Sets';
 import './style.css';
 
