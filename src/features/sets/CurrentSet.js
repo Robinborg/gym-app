@@ -1,5 +1,5 @@
 import React from 'react';
-import PauseButton from './PauseButton';
+import PauseButton from '../../app/PauseButton';
 
 const CurrentSet = ({ currentSetCount, setCurrentSetCount}) => { 
 	const onClickIncrement = () => {

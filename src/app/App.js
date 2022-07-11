@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 
 import MainTimer from './MainTimer';
-import Sets from './Sets';
+import Sets from '../features/sets/Sets';
 import './style.css';
 
 

@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import setsListReducer from '../features/setsList/setsListSlice';
+import setsListReducer from '../features/sets/setsListSlice';
 
 export default configureStore({
 	reducer: {

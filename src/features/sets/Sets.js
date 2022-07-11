@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import CurrentSet from './CurrentSet';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { addToList } from '../features/setsList/setsListSlice';
+import { addToList } from './setsListSlice';
 
 const Sets = props => {
 	const [currentSetCount, setCurrentSetCount] = useState(0);
@@ -10,7 +10,6 @@ const Sets = props => {
 	// figuring out redux-react
 	const setList = useSelector(state => state.setsList);
 	const dispatch = useDispatch();
-
 
 	return (
 		<div>
