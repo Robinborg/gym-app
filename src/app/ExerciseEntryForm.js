@@ -1,13 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { addToList, clearList } from '../features/sets/setsListSlice';
+import { addToList } from '../features/sets/setsListSlice';
 
 const ExerciseEntryForm = () => {
 	const { register, handleSubmit, formState: { errors } } = useForm();
 	const dispatch = useDispatch();
 	const onSubmit = data => {
-		dispatch(clearList());
 		if (data.firstExercise) {
 			dispatch(addToList(data.firstExercise));
 		}
@@ -18,7 +17,7 @@ const ExerciseEntryForm = () => {
 			dispatch(addToList(data.thirdExercise));
 		}
 		if (data.fourthExercise) {
-			dispatch(addToList(data.fourthdExercise));
+			dispatch(addToList(data.fourthExercise));
 		}
 		if (data.fifthExercise) {
 			dispatch(addToList(data.fifthExercise));

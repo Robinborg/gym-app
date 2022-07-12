@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import MainTimer from '../features/timers/MainTimer';
@@ -9,10 +9,9 @@ import './style.css';
 
 const App = () => {
 	const [isActive, setIsActive] = useState(false);
-
 	return (
 		<div className="justify-middle">
-			<ExerciseEntryForm />
+			{!isActive && <ExerciseEntryForm />}
 			<MainTimer isActive={isActive}/>
 			<div>
 				<button  
