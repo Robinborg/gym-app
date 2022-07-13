@@ -21,26 +21,27 @@ export const setsListSlice = createSlice({
 		clearList: state => {
 			return initialState.exerciseList;
 		},
-		incrementFirstRep: (state) => {
-			state.firstRep++;
-		},
-		incrementSecondRep: (state) => {
-			state.secondRep++;
-		},
-		incrementThirdRep: (state) => {
-			state.thirdRep++;
-		},
-		incrementFourthRep: (state) => {
-			state.fourthRep++;
-		},
-		incrementFifthRep: (state) => {
-			state.fifthRep++;
+		incrementDynamic: (state) => {
+			if (state.firstRep < 5) {
+				state.firstRep++;
+			} 
+			else if (state.secondRep < 5) {
+				state.secondRep++;
+			}
+			else if (state.thirdRep < 5) {
+				state.thirdRep++;
+			}
+			else if (state.fourthRep < 5) {
+				state.fourthRep++;
+			}
+			else if (state.fifthRep < 5) {
+				state.fifthRep++;
+			}
 		},
 	},
+
 });
 
-export const { addToList, clearList, incrementFirstRep,
-               incrementSecondRep, incrementThirdRep, 
-               incrementFourthRep, incrementFifthRep } = setsListSlice.actions;
+export const { addToList, clearList, incrementDynamic } = setsListSlice.actions;
 export default setsListSlice.reducer;
 

@@ -1,8 +1,10 @@
+/*
+ * TODO: HighLight selected Exercise
+ */
+
 import React, { useState, useEffect, useRef } from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { addToList, incrementFirstRep, incrementSecondRep, incrementThirdRep,
-         incrementFourthRep, incrementFifthRep } from './setsListSlice';
+import { useSelector } from 'react-redux';
 import '../../app/style.css';
 
 const Sets = () => {
@@ -13,49 +15,82 @@ const Sets = () => {
 	const thirdRep = useSelector(state => state.setsList.thirdRep);
 	const fourthRep = useSelector(state => state.setsList.fourthRep);
 	const fifthRep = useSelector(state => state.setsList.fifthRep);
-	const dispatch = useDispatch();
 
 	const [first, second, third, fourth, fifth] = exerciseList;
 
-	const onClickIncrementFirst = () => {
-		dispatch(incrementFirstRep());
+	const displaySecondRep = () => {
+		if (second) {
+			if (firstRep >= 5 && secondRep < 5) {
+			return (
+			<p className={'highlight'}>
+				{ second }: { secondRep } / 5
+			</p>
+			);
+			} else {
+				return <p>{ second }: { secondRep } / 5 </p>
+			}
+		}else {
+			return null;
+		}
 	}
-	const onClickIncrementSecond = () => {
-		dispatch(incrementSecondRep());
+	const displayThirdRep = () => {
+		if (third) {
+			if (secondRep >= 5 && thirdRep < 5) {
+			return (
+			<p className={'highlight'}>
+				{ third }: { thirdRep } / 5
+			</p>
+			);
+			} else {
+				return <p>{ third }: { thirdRep } / 5 </p>
+			}
+		} else {
+			return null;
+		}
 	}
-	const onClickIncrementThird = () => {
-		dispatch(incrementThirdRep());
+	const displayFourthRep = () => {
+		if (fourth) {
+			if (thirdRep >= 5 && fourthRep < 5) {
+			return (
+			<p className={'highlight'}>
+				{ fourth }: { fourthRep } / 5
+			</p>
+			);
+			} else {
+				return <p>{ fourth }: { fourthRep } / 5 </p>
+			}
+		} else {
+			return null;
+		}
 	}
-	const onClickIncrementFourth = () => {
-		dispatch(incrementFourthRep());
+	const displayFifthRep = () => {
+		if (fifth) {
+			if (fourthRep >= 5 && fifthRep < 5) {
+			return (
+			<p className={'highlight'}>
+				{ fifth }: { fifthRep } / 5
+			</p>
+			);
+			} else {
+				return <p>{ fifth }: { fifthRep } / 5 </p>
+			}
+		} else {
+			return null;
+		}
 	}
-	const onClickIncrementFifth = () => {
-		dispatch(incrementFifthRep());
-	}
-
 	return (
 		<div>
 			{!exerciseList.length <= 0 && <div className={"exercise-list"}>
-			<p>{ first }: { firstRep } / 5</p>
-				<button onClick={onClickIncrementFirst}>
-					Increase One
-				</button>
-			<p>{ second }: { secondRep } / 5</p>
-				<button onClick={onClickIncrementSecond}>
-					Increase Two
-				</button>
-			<p>{ third }: { thirdRep } / 5</p>
-				<button onClick={onClickIncrementThird}>
-					Increase Third
-				</button>
-			<p>{ fourth }: { fourthRep } / 5</p>
-				<button onClick={onClickIncrementFourth}>
-					Increase Fourth
-				</button>
-			<p>{ fifth }: { fifthRep } / 5</p>
-				<button onClick={onClickIncrementFifth}>
-					Increase Fifth 
-				</button>
+				{firstRep < 5 
+					? <p className={'highlight'}>
+					   { first }: { firstRep } / 5
+				    </p>
+				: <p>{ first }: { firstRep } / 5 </p>
+				}
+				{displaySecondRep()}
+				{displayThirdRep()}
+				{displayFourthRep()}
+				{displayFifthRep()}
 		</div>
 			}
 		</div>

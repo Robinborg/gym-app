@@ -1,18 +1,25 @@
 /*
- * TODO: increment exerciseList and currentSet
+ * Timer component for starting, pausing and resetting user's workout
+ * break.
+ * Increments the exercise list.
  */
 
 import React, { useState,  useRef } from 'react';
+import { incrementDynamic } from '../sets/setsListSlice';
+import { useDispatch } from 'react-redux';
+
 
 const Timer = () => {
 		const [timer, setTimer] = useState(0);
 		const [isActive, setIsActive] = useState(false);
 		const [isPaused, setIsPaused] = useState(false);
 		const countRef = useRef(null);
+	  const dispatch = useDispatch();
 
 		const handleStart = () => {
 					setIsActive(true);
 					setIsPaused(true);
+			    dispatch(incrementDynamic());
 					countRef.current = setInterval(() => {
 						setTimer((timer) => timer + 1);
 					}, 1000);

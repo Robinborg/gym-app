@@ -59,6 +59,7 @@ body {
 	border-radius: 10px;
 	margin-left: 300px;
 	margin-right: 300px;
+	margin-top: 10px;
 }
 input{
 	padding: 20px 40px;
@@ -79,4 +80,11 @@ form {
 	text-decoration: none;
 	cursor: pointer;
 	border: 5px solid green;
+}
+.highlight {
+	color: black;
+	background-color: #DDE5B6;
+	border: 1px solid white;
+	border-radius: 10px;
+	margin: 5px;
 }
