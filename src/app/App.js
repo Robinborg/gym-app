@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import MainTimer from '../features/timers/MainTimer';
+import Timer from '../features/timers/Timer';
 import Sets from '../features/sets/Sets';
+import CurrentSet from '../features/sets/CurrentSet';
 import ExerciseEntryForm from './ExerciseEntryForm';
 import './style.css';
 
@@ -27,6 +29,8 @@ const App = () => {
 			  	</button>
 			</div>
 			<Sets />
+			<CurrentSet />
+			<Timer />
 		</div>
 	);
 };

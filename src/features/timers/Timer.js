@@ -1,6 +1,10 @@
+/*
+ * TODO: increment exerciseList and currentSet
+ */
+
 import React, { useState,  useRef } from 'react';
 
-const Timer = ({ onClickIncrement }) => {
+const Timer = () => {
 		const [timer, setTimer] = useState(0);
 		const [isActive, setIsActive] = useState(false);
 		const [isPaused, setIsPaused] = useState(false);
@@ -43,7 +47,6 @@ const Timer = ({ onClickIncrement }) => {
 								className="timer-buttons start-button"
 							  onClick={() => {
 							    if (!isActive) {
-										onClickIncrement(); 
 										handleStart();
 									} else {
 										console.log("running");

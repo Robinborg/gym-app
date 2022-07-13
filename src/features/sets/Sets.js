@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import CurrentSet from './CurrentSet';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { addToList, incrementFirstRep, incrementSecondRep, incrementThirdRep,
@@ -59,7 +58,6 @@ const Sets = () => {
 				</button>
 		</div>
 			}
-			<CurrentSet />
 		</div>
 	);
 };
