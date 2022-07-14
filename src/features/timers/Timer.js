@@ -45,7 +45,7 @@ const Timer = () => {
 						<p>Rest Time: {timeForTimer} / {formatTimer()}</p>
 						<div className="box-buttons">
 							<button 
-								className="timer-buttons start-button"
+								className="timer-buttons"
 							  onClick={() => {
 							    if (!isActive) {
 										handleStart();
@@ -57,7 +57,7 @@ const Timer = () => {
 							Start
 							</button>
 						  <button 
-								className="timer-buttons stop-button"
+								className="timer-buttons"
 							  onClick={handleReset}>
 								Stop
 							</button>
