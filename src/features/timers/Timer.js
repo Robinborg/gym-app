@@ -1,24 +1,20 @@
 /*
- * Timer component for starting, pausing and resetting user's workout
+ * Timer component for starting, and stopping user's workout
  * break.
- * Increments the exercise list.
+ * Increments the exercise list on start of break.
  */
-
 import React, { useState,  useRef } from 'react';
 import { incrementDynamic } from '../sets/setsListSlice';
 import { useDispatch } from 'react-redux';
 
-
 const Timer = () => {
 		const [timer, setTimer] = useState(0);
 		const [isActive, setIsActive] = useState(false);
-		const [isPaused, setIsPaused] = useState(false);
 		const countRef = useRef(null);
 	  const dispatch = useDispatch();
 
 		const handleStart = () => {
 					setIsActive(true);
-					setIsPaused(true);
 			    dispatch(incrementDynamic());
 					countRef.current = setInterval(() => {
 						setTimer((timer) => timer + 1);
@@ -27,7 +23,6 @@ const Timer = () => {
 		const handleReset = () => {
 					clearInterval(countRef.current);
 					setIsActive(false);
-		      setIsPaused(false);
 					setTimer(0);
 				};
 		const formatTimer = () => {
@@ -37,7 +32,6 @@ const Timer = () => {
 			if (getMinutes === '03' && getSeconds === '01') {
 				clearInterval(countRef.current);
 				setIsActive(false);
-				setIsPaused(false);
 				setTimer(0);
 			}
 			return `${getMinutes}:${getSeconds}`;

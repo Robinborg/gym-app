@@ -2,7 +2,7 @@
  * Sets component that displays the user entered exercises,
  * and current exercises repetition 
  */
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 
 import { useSelector } from 'react-redux';
 import '../../app/style.css';

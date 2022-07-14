@@ -38,6 +38,7 @@ const ExerciseEntryForm = () => {
 					<input {...register("fourthExercise")}/>
 					<input {...register("fifthExercise")}/>
 					<input className="input-button" type="submit"/>
+					{errors && <p>{errors.message}</p>}
 					</form>
 			</div>
 		</div>
