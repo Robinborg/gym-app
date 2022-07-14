@@ -1,6 +1,6 @@
 /*
  * "Ducks" Structure:
- * Action, Action Creators and Reducers in one file
+ * Actions, Action Creators and Reducers in one file
  * Controls exerciseList and Repetitions for each exercise
  */
 import { createSlice } from '@reduxjs/toolkit';
