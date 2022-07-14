@@ -1,6 +1,4 @@
-/*
- * TODO: HighLight selected Exercise
- */
+
 
 import React, { useState, useEffect, useRef } from 'react';
 

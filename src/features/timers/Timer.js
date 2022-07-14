@@ -59,13 +59,14 @@ const Timer = () => {
 										console.log("running");
 									}
 								}
-							}>Start Break</button>
+							}>
+							Start
+							</button>
 						  <button 
-								className="timer-buttons pause-button"
-							  onClick={handlePause}>Pause Break</button>
-						  <button 
-								className="timer-buttons reset-button"
-							  onClick={handleReset}>Reset timer</button>
+								className="timer-buttons stop-button"
+							  onClick={handleReset}>
+								Stop
+							</button>
 				   </div>
 				</div>
 			);
