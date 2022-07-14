@@ -1,3 +1,7 @@
+/*
+ * react-hook-form to get User input for their exercise list
+ * dispatch the information to the store
+ */
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';

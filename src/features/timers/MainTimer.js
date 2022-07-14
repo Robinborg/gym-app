@@ -1,3 +1,6 @@
+/*
+ * MainTimer for the Application 60:00 for optimal workout
+ */
 import React, { useState, useEffect, useRef } from 'react';
 
 const MainTimer = ({ isActive }) => {

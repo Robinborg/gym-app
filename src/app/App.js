@@ -1,5 +1,7 @@
+/*
+ * Combine all of the components
+ */
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
 
 import MainTimer from '../features/timers/MainTimer';
 import Timer from '../features/timers/Timer';
