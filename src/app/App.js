@@ -15,7 +15,7 @@ const App = () => {
 			{!isActive && <ExerciseEntryForm />}
 			<MainTimer isActive={isActive}/>
 			<div>
-				<button  
+				{!isActive && <button  
 					className="start-button"
 					onClick={() => {
 						if (!isActive) {
@@ -26,6 +26,7 @@ const App = () => {
 					}}>
 			    	Start Session 
 			  	</button>
+				}
 			</div>
 			<Sets />
 			<Timer />
