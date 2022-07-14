@@ -16,7 +16,11 @@ export const setsListSlice = createSlice({
 	initialState,
 	reducers: {
 		addToList: (state, action) => {
-			state.exerciseList.push(action.payload)
+			if (state.exerciseList.includes(action.payload)){
+				console.log("Already in exerciseList");
+			} else {
+				state.exerciseList.push(action.payload)
+			}
 		},
 		clearList: state => {
 			return initialState.exerciseList;

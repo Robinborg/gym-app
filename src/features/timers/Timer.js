@@ -24,10 +24,6 @@ const Timer = () => {
 						setTimer((timer) => timer + 1);
 					}, 1000);
 				};
-		const handlePause = () => {
-					clearInterval(countRef.current);
-					setIsPaused(false);
-				};
 		const handleReset = () => {
 					clearInterval(countRef.current);
 					setIsActive(false);

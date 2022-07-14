@@ -32,7 +32,7 @@ body {
 .box-buttons {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: center;
 }
 .timer-buttons {
 	background-color: #FCF8E8;
@@ -41,9 +41,11 @@ body {
 	border-radius: 12px;
 	text-decoration: none;
 	cursor: pointer;
+	margin-bottom: 30px;
 }
 .start-button {
 	border: 5px solid #4CAF50 ;
+	margin-right: 10px;
 }
 .stop-button {
 	border: 5px solid red;
