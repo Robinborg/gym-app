@@ -33,7 +33,7 @@ const Timer = () => {
 			const getSeconds = `0${(timer % 60)}`.slice(-2);
 			const minutes = `${Math.floor(timer / 60)}`;
 		 	const getMinutes = `0${minutes % 60}`.slice(-2);
-			if (getMinutes === timeForTimer && getSeconds === '01') {
+			if (getMinutes === timeForTimer.slice(0, 2) && getSeconds === '01') {
 				clearInterval(countRef.current);
 				setIsActive(false);
 				setTimer(0);
