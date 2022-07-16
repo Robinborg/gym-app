@@ -22,20 +22,20 @@ const App = () => {
 		<div className="justify-middle">
 			{!isActive && 
 			<div>
-				<h1>Select Rest Time</h1>
+				<h2>Select Rest Time</h2>
 			<div className={"timer-box"}>
 				<button 
-					className={"timer-buttons"}
+					className={"time-timer-buttons"}
 					onClick={() => dispatch(defaultBreak())}> 
 					03:00
 				</button>
 				<button 
-					className={"timer-buttons"}
+					className={"time-timer-buttons"}
 					onClick={() => dispatch(mediumBreak())}>
 					04:00
 				</button>
 				<button 
-					className={"timer-buttons"}
+					className={"time-timer-buttons"}
 					onClick={() => dispatch(longBreak())}>
 					05:00
 				</button>

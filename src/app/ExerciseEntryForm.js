@@ -30,7 +30,7 @@ const ExerciseEntryForm = () => {
 	return (
 		<div>
 			<div>
-				<h1>Enter Exercises:</h1>
+				<h2>Enter Exercises:</h2>
 				<form onSubmit={handleSubmit(onSubmit)}>
 		      <input {...register("firstExercise")}/>
 					<input {...register("secondExercise")}/>
