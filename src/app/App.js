@@ -19,7 +19,7 @@ const App = () => {
 	const dispatch = useDispatch()
 
 	return (
-		<div className="justify-middle">
+		<div className="justify-middle adjust-to-screen">
 			{!isActive && 
 			<div>
 				<h2>Select Rest Time</h2>
