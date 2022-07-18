@@ -9,7 +9,6 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-
 input{
 	padding: 20px 40px;
 	margin: 10px;
@@ -35,7 +34,6 @@ button:hover {
 .big-clock {
 	font-size: 60px;
 }
-
 .justify-middle {
 	text-align: center;
 	align-items: center;
@@ -44,7 +42,6 @@ button:hover {
 	overflow-x: auto;
 	overflow-y: auto;
 }
-
 .start-button {
 	background-color: #333333;
 	color: white;
@@ -83,7 +80,6 @@ button:hover {
 	margin: 5px;
 	cursor: pointer;
 }
-
 .exercise-list {
 	line-height: 140%;
 	list-style-position: inside;
