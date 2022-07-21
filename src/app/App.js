@@ -11,7 +11,7 @@ import Timer from '../features/timers/Timer';
 import Sets from '../features/sets/Sets';
 import ExerciseEntryForm from './ExerciseEntryForm';
 
-import './style.css';
+//import './style.css';
 
 
 const App = () => {
