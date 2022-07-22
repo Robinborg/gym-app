@@ -1,3 +1,7 @@
+/*
+ *@jest-environment jsdom
+ */
+
 import React from 'react';
 import { render } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
@@ -10,12 +14,7 @@ export function renderWithProviders(
 	ui,
 	{
 		preloadedState = {},
-		store = configureStore({
-			reducer: {
-				setsList: setsListReducer, 
-				breakTime: timersSliceReducer
-			}, 
-			preloadedState }),
+		store = configureStore({ reducer: { setsList: setsListReducer, breakTime: timersSliceReducer }, preloadedState }),
 		...renderOptions
 	} = {}
 ) {
@@ -24,4 +23,5 @@ export function renderWithProviders(
 	}
 	return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) }
 }
+
 
