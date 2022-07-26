@@ -1,3 +1,7 @@
+/** 
+ * @jest-environment jsdom
+*/
+
 import React from 'react';
 import { renderWithProviders } from '.././utils/test-utils';
 import App from '.././src/app/App';
