@@ -32,11 +32,21 @@ const ExerciseEntryForm = () => {
 			<div>
 				<h2>Enter Exercises:</h2>
 				<form onSubmit={handleSubmit(onSubmit)}>
-		      <input {...register("firstExercise")}/>
-					<input {...register("secondExercise")}/>
-					<input {...register("thirdExercise")}/>
-					<input {...register("fourthExercise")}/>
-					<input {...register("fifthExercise")}/>
+		      <input 
+						aria-label="first exercise"
+					  {...register("firstExercise")}/>
+					<input 
+						aria-label="second exercise"
+					  {...register("secondExercise")}/>
+					<input 
+						aria-label="third exercise"
+					  {...register("thirdExercise")}/>
+					<input 
+						aria-label="fourth exercise"
+					{...register("fourthExercise")}/>
+					<input 
+						aria-label="fifth exercise"
+					{...register("fifthExercise")}/>
 					<input className="input-button" type="submit"/>
 					{errors && <p>{errors.message}</p>}
 					</form>
