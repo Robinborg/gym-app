@@ -12,4 +12,5 @@ module.exports = {
 	],
 	transformIgnorePatterns: ['<rootDir>/node_modules/'],
 	verbose: true,
+	setupFilesAfterEnv: ['<rootDir>/jest-setup.js']
 };
