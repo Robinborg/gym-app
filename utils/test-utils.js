@@ -4,12 +4,16 @@ import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 // As a basic setup, import your same slice reducers
  import setsListReducer from '.././src/features/sets/setsListSlice'
+ import timersReducer from '.././src/features/timers/timersSlice'
 
  export function renderWithProviders(
    ui,
      { preloadedState = {},
              // Automatically create a store instance if no store was passed in
-			 store = configureStore({ reducer: { setsList: setsListReducer }, preloadedState }),
+			 store = configureStore({ reducer: { 
+         setsList: setsListReducer, 
+         breakTime: timersReducer
+       }, preloadedState }),
       ...renderOptions
       } = {}
       ) {
