@@ -1,5 +1,6 @@
 /*
- * MainTimer for the Application 60:00 for optimal workout
+ * MainTimer for the Application. 
+ * Set to 60:00 for optimal workout.
  */
 import React, { useState, useEffect, useRef } from 'react';
 

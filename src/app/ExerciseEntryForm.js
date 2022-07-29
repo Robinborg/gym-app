@@ -47,7 +47,9 @@ const ExerciseEntryForm = () => {
 					<input 
 						aria-label="fifth exercise"
 					{...register("fifthExercise")}/>
-					<input className="input-button" type="submit"/>
+					<input 
+						aria-label="submit-button"
+					  className="input-button" type="submit"/>
 					{errors && <p>{errors.message}</p>}
 					</form>
 			</div>
