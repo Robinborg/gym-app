@@ -5,7 +5,7 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-//import '../../app/style.css';
+import '../../app/style.css';
 
 const Sets = () => {
 	

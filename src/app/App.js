@@ -11,7 +11,7 @@ import Timer from '../features/timers/Timer';
 import Sets from '../features/sets/Sets';
 import ExerciseEntryForm from './ExerciseEntryForm';
 
-//import './style.css';
+import './style.css';
 
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
 	const dispatch = useDispatch()
 
 	return (
-		<div className="justify-middle adjust-to-screen">
+		<div className="justify-middle adjust-to-screen medium-screen tiny screen">
 			{!isActive && 
 			<div>
 				<h2>Select Rest Time</h2>
