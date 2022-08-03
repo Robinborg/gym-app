@@ -52,6 +52,5 @@ test("Testing ExerciseEntryForm and Redux", () => {
 		{ target: { value: "chest" } });
 	expect(screen.getByRole("textbox", { name: /fifth exercise/i }).value)
 		.toBe("chest");
-	expect(screen.getByRole("textbox", { name: /submit-button/i }))
-		.toBeInTheDocument();
 });
+

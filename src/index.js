@@ -14,7 +14,7 @@ const root = createRoot(
 root.render(
 	<Provider store={store}>
 		<ErrorBoundary>
-  	<App />
+  	  <App />
 		</ErrorBoundary>
 	</Provider>
 );
