@@ -41,15 +41,10 @@ button:hover {
 .adjust-to-screen {
 	width: 100%;
 }
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 440px) {
 	.medium-screen {
+		overflow-y: scroll;
 		margin-left: 200px;
-	}
-}
-@media only screen and (max-width: 180px) {
-	.tiny-screen {
-		margin-left: 200px;
-		margin-right: 200px
 	}
 }
 .start-button {

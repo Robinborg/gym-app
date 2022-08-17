@@ -31,6 +31,7 @@ test("Testing ExerciseEntryForm and Redux", () => {
 		.toBeInTheDocument();
 	expect(screen.getByRole("textbox", { name: /fifth exercise/i}))
 		.toBeInTheDocument();
+	
 	// Enter some text and check that it updates input fields
 	fireEvent.change(screen.getByRole("textbox", { name: /first exercise/i}),
 		{ target: { value: "arms" } });
@@ -52,5 +53,14 @@ test("Testing ExerciseEntryForm and Redux", () => {
 		{ target: { value: "chest" } });
 	expect(screen.getByRole("textbox", { name: /fifth exercise/i }).value)
 		.toBe("chest");
+});
+test("Testing start stop buttons in Timer", () => {
+	renderWithProviders(<App />);
+	expect(screen.getByText("Start"))
+		.toBeInTheDocument();
+	expect(screen.getByText("Stop"))
+		.toBeInTheDocument();
+	fireEvent.click(screen.getByText("Start"))
+	fireEvent.click(screen.getByText("Stop"))
 });
 
